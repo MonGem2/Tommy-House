@@ -24,6 +24,7 @@ class StartNewGame
 public:
 	StartNewGame(int difficultyes_, String file, Player &player, String font)
 	{
+		this->player = player;
 		pause.set(font, "Pause", 25, Color::White);
 		exitToMenu.set(font, "Exit to menu", 25, Color::White);
 		pause.set_position(20, 50);
@@ -31,9 +32,9 @@ public:
 		exitToMenu.set_position(player.get_x()-20, player.get_y()-20);
 		back.set_position(player.get_x() - 20, player.get_y() +20);
 		difficultyes = difficultyes_;
-		Granny.set(file, player.get_w(), player.get_h(), font, player.get_textSize(), Color(60, 5, 8),
+		Granny.set(file, player.get_w(), player.get_h(), font, player.get_textSize(), Color(60, 5, 8),0.1, 
 			map::getStageGranny(), map::spawnGranny().x, map::spawnGranny().y);
-		player.setPosition(map::spawnPlayer().x, map::spawnPlayer().y);
+		this->player.setPosition(map::spawnPlayer().x, map::spawnPlayer().y);
 		if (difficultyes_ == 0)
 		{
 			mask.loadFromFile("Image/mask_easy.png");
@@ -59,6 +60,8 @@ public:
 	}
 	void set(int difficultyes_, String file, Player &player, String font)
 	{
+		this->player = player;
+		this->player.setStage(map::getStagePlayer());
 		pause.set(font, "Pause", 25, Color::White);
 		exitToMenu.set(font, "Exit to menu", 25, Color::White);
 		pause.set_position(20, 50);
@@ -66,9 +69,9 @@ public:
 		exitToMenu.set_position(player.get_x() - 20, player.get_y() - 20);
 		back.set_position(player.get_x() - 20, player.get_y() + 20);
 		difficultyes = difficultyes_;
-		Granny.set(file, player.get_w(), player.get_h(), font, player.get_textSize(), Color(60, 5, 8),
+		Granny.set(file, player.get_w(), player.get_h(), font, player.get_textSize(), Color(60, 5, 8),0.1, 
 			map::getStageGranny(), map::spawnGranny().x, map::spawnGranny().y);
-		player.setPosition(map::spawnPlayer().x, map::spawnPlayer().y);
+		this->player.setPosition(map::spawnPlayer().x, map::spawnPlayer().y);
 		if (difficultyes_ == 0)
 		{
 			mask.loadFromFile("Image/mask_easy.png");
@@ -95,8 +98,6 @@ public:
 	void update(float time, Player &player, int &button, RenderWindow &window)
 	{
 		
-		
-		
 		if (thisTime <= 0 && day != 6&&!isPause)
 		{
 			
@@ -114,12 +115,12 @@ public:
 			}
 			if (difficultyes == 0)
 			{
-				player.update(time, Map, 0.15);
+				player.update(time, Map, 0.2);
 				//Granny.update_autoGranny(time, Map, player, 0.5);
 			}
 			if (difficultyes == 1)
 			{
-				player.update(time, Map, 0.1);
+				player.update(time, Map, 0.2);
 				//Granny.update_autoGranny(time, Map, player, 0.1);
 			}
 			if (difficultyes == 2)
@@ -129,7 +130,7 @@ public:
 			}
 			if (difficultyes == 3)
 			{
-				player.update(time, Map, 0.5);
+				player.update(time, Map, 0.1);
 				//Granny.update_autoGranny(time, Map, player, 0.15);
 			}
 			
@@ -140,7 +141,6 @@ public:
 				day += 1;
 				thisTime = 100;
 			}
-			
 			
 			view.setPosition(player.get_x(), player.get_y());
 			
@@ -174,7 +174,7 @@ public:
 			{
 				back.setColor(Color(60, 5, 8));
 			}
-			if (back.Mous_in_text(window))
+			if (back.Mous_in_text(window) && Mouse::isButtonPressed(Mouse::Left))
 			{
 				isPause = false;
 			}
@@ -237,11 +237,9 @@ public:
 						window.draw(s_map);//рисуем квадратики на экран
 					}
 			}
+			window.draw(maskS);
 			back.dispayText(window);
 			exitToMenu.dispayText(window);
-			player.drav_window(window);
-			Granny.drav_window(window);
-			window.draw(maskS);
 		}
 		if (day != 6 && !isPause)
 		{
@@ -301,15 +299,15 @@ public:
 						window.draw(s_map);//рисуем квадратики на экран
 					}
 			}
-			std::cout << player.get_stage() << std::endl;
-
-			pause.dispayText(window);
-			player.drav_window(window);
+			
 			if (player.get_stage() == Granny.get_stage())
 			{
 				Granny.drav_window(window);
 			}
-
+			
+			player.drav_window(window);
+			window.draw(maskS);
+			pause.dispayText(window);
 
 		}
 

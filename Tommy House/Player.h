@@ -47,8 +47,8 @@ public:
 	Vector2u goToPoint(int x, int y, int stage, map &Map);
 	void setTextureRect(float &time, int dir1);
 	Player();
-	Player(String F, float W, float H, String font, int textsize, Color color, float stage_, float speed, int X = 999, int Y = 999);
-	void set(String F, float W, float H, String font, int textsize, Color color, float stage_, float speed, int X = 999, int Y = 999);
+	Player(String F, float W, float H, String font, int textsize, Color color, float stage_, float speed, int X , int Y );
+	void set(String F, float W, float H, String font, int textsize, Color color, float stage_, float speed, int X , int Y );
 	void update(float time, map &Map, float speed);
 	void set_management(Keyboard::Key up1, Keyboard::Key down1, Keyboard::Key left1, Keyboard::Key right1);
 	void mask_kolor(int r, int g, int b);
@@ -62,5 +62,6 @@ public:
 	float get_textSize();
 	bool isGrannyWithPlayer(int X, int Y, int W, int H, int zone);
 	int get_stage();
+	void setStage(int stage);
 	//void update_autoGranny(float time, map &Map, Player &player, float speed);
 };

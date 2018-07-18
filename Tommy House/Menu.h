@@ -36,6 +36,7 @@ class Menu : public MainClassMenu
 	StartGame startGameMenu;
 	void Creator_(RenderWindow &a);
 public:
+	Menu();
 	Menu(String image, String Font, String musicFile, String Creator_Image, String sprite_image);
 	void set(String image, String Font, String musicFile, String Creator_Image, String sprite_image);
 	void update(RenderWindow &a, float time1);

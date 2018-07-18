@@ -14,9 +14,9 @@ const int WIDTH_MAP = 26;
 class map
 {
 	std::vector<room> rooms;
-	int sizeblock = 32;
-public:
 	
+public:
+	const int sizeblock = 32;
 	map()
 	{
 		///////////////////stage1////////////////////
@@ -89,7 +89,7 @@ public:
 	}
 	static Vector2u spawnPlayer()
 	{
-		Vector2u a(100, 100);
+		Vector2u a(200, 600);
 		return a;
 	}
 	static int getStageGranny()
@@ -197,7 +197,7 @@ public:
 	String Stage2[HEIGHT_MAP] = {
 		"000000000002200000WWW00000",//0-wall                   
 		"0          22            0",//1-stairs(up)
-		"0 s                      0",//2-stairs(down)
+		"0                        0",//2-stairs(down)
 		"0    .             .     0",//T-table
 		"0                        0",//t-toilet
 		"0rrrrddrrr               0",//n-nightstand

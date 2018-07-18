@@ -1,5 +1,11 @@
 #include "Menu.h"
+
 using namespace sf;
+
+	Menu::Menu()
+	{
+	
+	}
 	void Menu::Creator_(RenderWindow &a)
 	{
 		creat.update(a, button);
@@ -9,17 +15,15 @@ using namespace sf;
 		startGameMenu.set(Font, image);
 		creat.set(Creator_Image, Font);
 
-		player.set(sprite_image, 48, 65, Font, 24, Color::Black, map::getStagePlayer(), 10);
+		player.set(sprite_image, 48, 65, Font, 24, Color::Black, map::getStagePlayer(), 10, map::spawnPlayer().x, map::spawnPlayer().y);
 
 		music.openFromFile(musicFile);
 		music.play();
-		//music.isRelativeToListener()
-		//music.isRelativeToListener(true);
 		music.setLoop(true);
 		MenuImage.loadFromFile(image);
 		MenuTexture.loadFromImage(MenuImage);
 		MenuSprite.setTexture(MenuTexture);
-		startGame.set(Font, "STARTING GAME", 25, Color::Color(60, 5, 8));
+		startGame.set(Font, "START GAME", 25, Color::Color(60, 5, 8));
 		Option.set(Font, "Option", 25, Color::White);
 		Exit.set(Font, "Exit", 25, Color::White);
 		Creators.set(Font, "Creators", 25, Color::White);
@@ -35,12 +39,10 @@ using namespace sf;
 		startGameMenu.set(Font, image);
 		creat.set(Creator_Image, Font);
 
-		player.set(sprite_image, 48, 65, Font, 24, Color::Black, map::getStagePlayer(), 10);
+		player.set(sprite_image, 48, 65, Font, 24, Color::Black, map::getStagePlayer(), 0.1, map::spawnPlayer().x, map::spawnPlayer().y);
 
 		music.openFromFile(musicFile);
 		music.play();
-		//music.isRelativeToListener()
-		//music.isRelativeToListener(true);
 		music.setLoop(true);
 
 		MenuImage.loadFromFile(image);
@@ -59,8 +61,6 @@ using namespace sf;
 	}
 	void Menu::update(RenderWindow &a, float time1)
 	{
-		//std::cout << button << "\t";
-		music.setLoop(true);
 		if (button == No)
 		{
 			if (startGame.Mous_in_text(a))

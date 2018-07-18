@@ -14,7 +14,8 @@ public:
 	{
 		Clock clock;
 		RenderWindow window(sf::VideoMode(length, height), "Tommy House");
-		Menu menu1("Image/Hous(Menu).jpg", "Font/Brushstroke Horror.otf", "Music/music1.ogg", "Image/Creators.jpg", "Image/tommy.png");
+		Menu menu1;
+		menu1.set("Image/Hous(Menu).jpg", "Font/Brushstroke Horror.otf", "Music/music1.ogg", "Image/Creators.jpg", "Image/tommy.png");
 		while (window.isOpen())
 		{
 			float time = clock.getElapsedTime().asMilliseconds();

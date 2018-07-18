@@ -65,18 +65,25 @@ void Player::update(float time, map &Map, float speed)
 		{
 			dy = -speed;
 			setTextureRect(time, 3);
+			sprite.move(0, dy);
 		}
 		if (Keyboard::isKeyPressed(down))
 		{
-			dy = speed; setTextureRect(time, 0);
+			dy = speed; 
+			setTextureRect(time, 0);
+			sprite.move(0, dy);
 		}
 		if (Keyboard::isKeyPressed(right))
 		{
-			dx = speed; setTextureRect(time, 2);
+			dx = speed; 
+			setTextureRect(time, 2);
+			sprite.move(dx, 0);
 		}
 		if (Keyboard::isKeyPressed(left))
 		{
-			dx = -speed; setTextureRect(time, 1);
+			dx = -speed; 
+			setTextureRect(time, 1);
+			sprite.move(dx, 0);
 		}
 	float z=x + dx * time , v= y + dy * time;;
 	if (dx > 0)
@@ -156,11 +163,14 @@ float Player::get_y()
 }
 void Player::map_update(map &Map, float dx, float dy, float x_, float y_)
 {
-	for (int i = y / 34; i<(y + h) / 34; i++)
-		for (int l = x / 34; l < (x + w) / 34; l++)
+	
+	for (int i = y / Map.sizeblock; i<(y + h) / Map.sizeblock; i++)
+		for (int l = x / Map.sizeblock; l < (x + w) / Map.sizeblock; l++)
 		{
+			
 			if (Map.Stage1[i][l] == '0')
 			{
+				
 				if (dx > 0)
 				{
 					x = x_;
@@ -184,6 +194,7 @@ void Player::map_update(map &Map, float dx, float dy, float x_, float y_)
 			}
 		}
 	dx = dy = 0;
+	std::cout << x << "       " << y << std::endl << w << "       " << h << std::endl;
 	sprite.setPosition(x, y);
 }
 float Player::get_w()
@@ -285,3 +296,9 @@ Vector2u Player::goToPoint(int x, int y, int stage, map &Map)
 	speed = 0;
 	map_update(Map);
 }*/
+void Player::setStage(int stage)
+{
+	this->stage = stage;
+
+
+}
