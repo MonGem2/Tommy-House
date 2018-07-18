@@ -1,4 +1,5 @@
 #include "Menu.h"
+#include <Windows.h>
 
 class Game
 {
@@ -9,11 +10,11 @@ public:
 		return app;
 	}
 
-	void startGame()
+	void startGame(int length, int height)
 	{
 		Clock clock;
-		RenderWindow window(sf::VideoMode(1000, 700), "Tommy Hous");
-		Menu menu1("Image/Hous(Menu).jpg", "Font/Brushstroke Horror.otf", "Music/music1.ogg", "Image/Creators.jpg", "Image/granny.png");
+		RenderWindow window(sf::VideoMode(length, height), "Tommy House");
+		Menu menu1("Image/Hous(Menu).jpg", "Font/Brushstroke Horror.otf", "Music/music1.ogg", "Image/Creators.jpg", "Image/tommy.png");
 		while (window.isOpen())
 		{
 			float time = clock.getElapsedTime().asMilliseconds();
@@ -26,7 +27,6 @@ public:
 			}
 			menu1.update(window, time);
 			window.clear();
-			//window.draw(shape);
 			menu1.draw(window);
 			window.display();
 		}
@@ -45,6 +45,8 @@ private:
 
 int main()
 {
-	Game::getInstance().startGame();
+	//HWND hConsole = GetConsoleWindow();//Если компилятор старый заменить на GetForegroundWindow()
+	//ShowWindow(hConsole, SW_HIDE);//собственно прячем оконо консоли
+	Game::getInstance().startGame(1000, 700);
 	return 0;
 }

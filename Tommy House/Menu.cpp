@@ -1,14 +1,15 @@
 #include "Menu.h"
-
+using namespace sf;
 	void Menu::Creator_(RenderWindow &a)
 	{
 		creat.update(a, button);
 	}
 	Menu::Menu(String image, String Font, String musicFile, String Creator_Image, String sprite_image)
 	{
+		startGameMenu.set(Font, image);
 		creat.set(Creator_Image, Font);
 
-		player.set(sprite_image, 0, 0, 48, 65, Font, 24, Color::Black);
+		player.set(sprite_image, 48, 65, Font, 24, Color::Black, map::getStagePlayer(), 10);
 
 		music.openFromFile(musicFile);
 		music.play();
@@ -23,21 +24,18 @@
 		Exit.set(Font, "Exit", 25, Color::White);
 		Creators.set(Font, "Creators", 25, Color::White);
 		size = MenuImage.getSize();
-		startGamey = 30;
-		Optiony = 30 + 25 + 10;
-		Creatorsy = 30 + 25 + 10 + 25 + 10;
-		Exity = 30 + 25 + 10 + 25 + 10 + 25 + 10;
-		startGame.set_position(20, startGamey);
-		Option.set_position(20, Optiony);
-		Creators.set_position(20, Creatorsy);
-		Exit.set_position(20, Exity);
+		startGame.set_position(20, 30);
+		Option.set_position(20, 65);
+		Creators.set_position(20, 100);
+		Exit.set_position(20, 135);
 		Option__o.set(Font, image);
 	}
 	void Menu::set(String image, String Font, String musicFile, String Creator_Image, String sprite_image)
 	{
+		startGameMenu.set(Font, image);
 		creat.set(Creator_Image, Font);
 
-		player.set(sprite_image, 0, 0, 48, 65, Font, 24, Color::Black);
+		player.set(sprite_image, 48, 65, Font, 24, Color::Black, map::getStagePlayer(), 10);
 
 		music.openFromFile(musicFile);
 		music.play();
@@ -53,24 +51,16 @@
 		Exit.set(Font, "Exit", 25, Color::White);
 		Creators.set(Font, "Creators", 25, Color::White);
 		size = MenuImage.getSize();
-		startGamey = 30;
-		Optiony = 30 + 25 + 10;
-		Creatorsy = 30 + 25 + 10 + 25 + 10;
-		Exity = 30 + 25 + 10 + 25 + 10 + 25 + 10;
-		startGame.set_position(20, startGamey);
-		Option.set_position(20, Optiony);
-		Creators.set_position(20, Creatorsy);
-		Exit.set_position(20, Exity);
+		startGame.set_position(20, 30);
+		Option.set_position(20, 65);
+		Creators.set_position(20, 100);
+		Exit.set_position(20, 135);
 		Option__o.set(Font, image);
 	}
 	void Menu::update(RenderWindow &a, float time1)
 	{
 		//std::cout << button << "\t";
-		time += time1;
-		if (time > music.getDuration().asMilliseconds())
-		{
-			music.play();
-		}
+		music.setLoop(true);
 		if (button == No)
 		{
 			if (startGame.Mous_in_text(a))
@@ -81,6 +71,12 @@
 			{
 				startGame.setColor(Color::Color(60, 5, 8));
 			}
+			if (startGame.Mous_in_text(a)&&Mouse::isButtonPressed(Mouse::Left))
+			{
+				button = Start_Game;
+				Sleep(200);
+			}
+
 
 			if (Option.Mous_in_text(a))
 			{
@@ -127,7 +123,11 @@
 				a.close();
 			}
 		}
+		if (button == Start_Game)
+		{
+			startGameMenu.update(a, button, player, time1);
 
+		}
 		if (button == Creator)
 		{
 			Creator_(a);
@@ -136,7 +136,6 @@
 		{
 			Option__o.update(button, a, player, music);
 		}
-		///exit efekt
 
 
 	}
@@ -158,5 +157,9 @@
 		{
 
 			Option__o.draw(a);
+		}
+		if (button == Start_Game)
+		{
+			startGameMenu.draw(a);
 		}
 	}

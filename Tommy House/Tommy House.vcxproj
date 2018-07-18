@@ -127,6 +127,7 @@
   <ItemGroup>
     <ClCompile Include="about game.cpp" />
     <ClCompile Include="Audio_option.cpp" />
+    <ClCompile Include="Camera.cpp" />
     <ClCompile Include="Creator.cpp" />
     <ClCompile Include="Main.cpp">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</ExcludedFromBuild>
@@ -139,11 +140,13 @@
     <ClCompile Include="Player.cpp" />
     <ClCompile Include="Sound.cpp" />
     <ClCompile Include="StartGame(menu).cpp" />
+    <ClCompile Include="StartGame.cpp" />
     <ClCompile Include="Text.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="about game.h" />
     <ClInclude Include="Audio_option.h" />
+    <ClInclude Include="Camera.h" />
     <ClInclude Include="Creator.h" />
     <ClInclude Include="MainClassMenu.h" />
     <ClInclude Include="Management.h" />
@@ -151,8 +154,10 @@
     <ClInclude Include="Menu.h" />
     <ClInclude Include="Option.h" />
     <ClInclude Include="Player.h" />
+    <ClInclude Include="Room.h" />
     <ClInclude Include="Sound.h" />
     <ClInclude Include="StartGame(menu).h" />
+    <ClInclude Include="StartGame.h" />
     <ClInclude Include="Text.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

@@ -18,6 +18,7 @@ public:
 	void setFont(String file);
 	void setColor(Color color);
 	void setSize(int size);
+	int size();
 	void dispayText(RenderWindow &window);
 	void set_position(float x, float y);
 	bool Mous_in_text(RenderWindow &a);

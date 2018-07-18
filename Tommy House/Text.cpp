@@ -62,3 +62,7 @@ bool myText::Mous_in_text(RenderWindow &a)
 		}
 		return false;
 	}
+int myText::size()
+{
+	return text.getCharacterSize();
+}

@@ -4,6 +4,7 @@
 #include "Creator.h"
 #include "Option.h"
 #include "MainClassMenu.h"
+#include "StartGame(menu).h"
 
 using namespace sf;
 
@@ -18,6 +19,7 @@ enum Menu_Buttons
 class Menu : public MainClassMenu
 {
 	Player player;
+	Player Granny;
 	Option_class Option__o;
 	Image MenuImage;
 	Texture MenuTexture;
@@ -26,10 +28,12 @@ class Menu : public MainClassMenu
 	Music music;
 	Creator_ creat;
 	Sprite MenuSprite;
-	myText startGame, Option, Exit, Creators;
+	myText startGame;
+	myText Option;
+	myText Exit;
+	myText Creators;
 	Vector2u size;
-	int startGamey, Optiony, Exity, Creatorsy;
-	int clic = 0;
+	StartGame startGameMenu;
 	void Creator_(RenderWindow &a);
 public:
 	Menu(String image, String Font, String musicFile, String Creator_Image, String sprite_image);
