@@ -24,7 +24,7 @@ Creator_::Creator_(String file_image, String font)
 		//std::cout << isop << "\t";
 		if (back.Mous_in_text(a))
 		{
-			back.setColor(Color::Black);
+			back.setColor(Color(13,213,203));
 		}
 		else
 		{
@@ -34,7 +34,7 @@ Creator_::Creator_(String file_image, String font)
 		{
 			Sleep(200);
 			isop = 0;
-			//back.setColor(Color::Black);
+			//back.setColor(Color(13,213,203));
 		}
 	}
 	void Creator_::draw(RenderWindow &a)

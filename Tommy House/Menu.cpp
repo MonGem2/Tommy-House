@@ -15,7 +15,7 @@ using namespace sf;
 		startGameMenu.set(Font, image);
 		creat.set(Creator_Image, Font);
 
-		player.set(sprite_image, 48, 65, Font, 24, Color::Black, map::getStagePlayer(), 10, map::spawnPlayer().x, map::spawnPlayer().y);
+		player.set(sprite_image, 32, 50, Font, 24, Color(13,213,203), map::getStagePlayer(), 10, map::spawnPlayer().x, map::spawnPlayer().y);
 
 		music.openFromFile(musicFile);
 		music.play();
@@ -39,7 +39,7 @@ using namespace sf;
 		startGameMenu.set(Font, image);
 		creat.set(Creator_Image, Font);
 
-		player.set(sprite_image, 48, 65, Font, 24, Color::Black, map::getStagePlayer(), 0.1, map::spawnPlayer().x, map::spawnPlayer().y);
+		player.set(sprite_image, 32, 50, Font, 24, Color(13,213,203), map::getStagePlayer(), 0.1, map::spawnPlayer().x, map::spawnPlayer().y);
 
 		music.openFromFile(musicFile);
 		music.play();
@@ -65,7 +65,7 @@ using namespace sf;
 		{
 			if (startGame.Mous_in_text(a))
 			{
-				startGame.setColor(Color::Black);
+				startGame.setColor(Color(13,213,203));
 			}
 			else
 			{
@@ -80,7 +80,7 @@ using namespace sf;
 
 			if (Option.Mous_in_text(a))
 			{
-				Option.setColor(Color::Black);
+				Option.setColor(Color(13,213,203));
 			}
 			else
 			{
@@ -89,7 +89,7 @@ using namespace sf;
 
 			if (Creators.Mous_in_text(a))
 			{
-				Creators.setColor(Color::Black);
+				Creators.setColor(Color(13,213,203));
 			}
 			else
 			{
@@ -98,7 +98,7 @@ using namespace sf;
 
 			if (Exit.Mous_in_text(a))
 			{
-				Exit.setColor(Color::Black);
+				Exit.setColor(Color(13,213,203));
 			}
 			else
 			{

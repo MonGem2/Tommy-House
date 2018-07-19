@@ -23,7 +23,7 @@ void about_game::update(RenderWindow &a, int &button)
 	{
 		if (back.Mous_in_text(a))
 		{
-			back.setColor(Color::Black);
+			back.setColor(Color(13,213,203));
 		}
 		else
 		{

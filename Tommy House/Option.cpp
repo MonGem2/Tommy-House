@@ -51,7 +51,7 @@ void Option_class::update(int &button, RenderWindow &a, Player &player, Music &m
 			//back.set(file_f, "Back", 25, Color::White);
 			if (back.Mous_in_text(a))
 			{
-				back.setColor(Color::Black);
+				back.setColor(Color(13,213,203));
 			}
 			else
 			{
@@ -61,12 +61,12 @@ void Option_class::update(int &button, RenderWindow &a, Player &player, Music &m
 			{
 				button = 0;
 				Sleep(200);
-				//back.setColor(Color::Black);
+				//back.setColor(Color(13,213,203));
 			}
 
 			if (sound.Mous_in_text(a))
 			{
-				sound.setColor(Color::Black);
+				sound.setColor(Color(13,213,203));
 			}
 			else
 			{
@@ -79,7 +79,7 @@ void Option_class::update(int &button, RenderWindow &a, Player &player, Music &m
 
 			if (management.Mous_in_text(a))
 			{
-				management.setColor(Color::Black);
+				management.setColor(Color(13,213,203));
 			}
 			else
 			{
@@ -92,7 +92,7 @@ void Option_class::update(int &button, RenderWindow &a, Player &player, Music &m
 
 			if (about.Mous_in_text(a))
 			{
-				about.setColor(Color::Black);
+				about.setColor(Color(13,213,203));
 			}
 			else
 			{

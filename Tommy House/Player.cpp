@@ -3,7 +3,7 @@
 void Player::setTextureRect(float &time, int dir1)
 {
 	animation_time += 0.005*time;
-	if (animation_time >= 3) animation_time -= 3;
+	if (animation_time >= 4) animation_time -= 4;
 	sprite.setTextureRect(IntRect((int)animation_time * w, h*dir1, w, h));
 }
 Player::Player()
@@ -19,6 +19,7 @@ Player::Player(String F, float W, float H, String font, int textsize, Color colo
 	w = W;
 	h = H;
 	image.loadFromFile(file);
+	image.createMaskFromColor(Color(255, 255, 255));
 	texture.loadFromImage(image);
 	sprite.setTexture(texture);
 	sprite.setTextureRect(IntRect(0, 0, w, h));
@@ -40,6 +41,7 @@ void Player::set(String F, float W, float H, String font, int textsize, Color co
 	w = W;
 	h = H;
 	image.loadFromFile(file);
+	image.createMaskFromColor(Color(255, 255, 255));
 	texture.loadFromImage(image);
 	sprite.setTexture(texture);
 	sprite.setTextureRect(IntRect(0, 0, w, h));
@@ -63,24 +65,31 @@ void Player::update(float time, map &Map, float speed)
 	time = time / 700;
 		if (Keyboard::isKeyPressed(up))
 		{
+			
 			dy = -speed;
 			setTextureRect(time, 3);
 			sprite.move(0, dy);
 		}
+		else
 		if (Keyboard::isKeyPressed(down))
 		{
+			
 			dy = speed; 
 			setTextureRect(time, 0);
 			sprite.move(0, dy);
 		}
+		else
 		if (Keyboard::isKeyPressed(right))
 		{
+			
 			dx = speed; 
 			setTextureRect(time, 2);
 			sprite.move(dx, 0);
 		}
+		else
 		if (Keyboard::isKeyPressed(left))
 		{
+			
 			dx = -speed; 
 			setTextureRect(time, 1);
 			sprite.move(dx, 0);
@@ -133,15 +142,15 @@ void Player::update(float time, map &Map, float speed)
 	
 
 
-
+	
 }
-void Player::set_management(Keyboard::Key up1, Keyboard::Key down1, Keyboard::Key left1, Keyboard::Key right1)
-{
-	up = up1;
-	down = down1;
-	left = left1;
-	right = right1;
-}
+//void Player::set_management(Keyboard::Key up1, Keyboard::Key down1, Keyboard::Key left1, Keyboard::Key right1)
+//{
+//	up = up1;
+//	down = down1;
+//	left = left1;
+//	right = right1;
+//}
 void Player::mask_kolor(int r, int g, int b)
 {
 

@@ -12,8 +12,8 @@ class myText
 	int size_sumbol;
 public:
 	myText();
-	myText(String file, String newtext, int textsize, Color color = Color::Black);
-	void set(String file, String newtext, int textsize, Color color = Color::Black);
+	myText(String file, String newtext, int textsize, Color color = Color(13,213,203));
+	void set(String file, String newtext, int textsize, Color color = Color(13,213,203));
 	void setText(String newtext);
 	void setFont(String file);
 	void setColor(Color color);

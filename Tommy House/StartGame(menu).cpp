@@ -67,7 +67,7 @@
 
 			if (back.Mous_in_text(a))
 			{
-				back.setColor(Color::Black);
+				back.setColor(Color(13,213,203));
 			}
 			else
 			{
@@ -81,7 +81,7 @@
 			
 			if (NewGame.Mous_in_text(a))
 			{
-				NewGame.setColor(Color::Black);
+				NewGame.setColor(Color(13,213,203));
 			}
 			else
 			{
@@ -95,7 +95,7 @@
 			}
 			if (Continie.Mous_in_text(a))
 			{
-				Continie.setColor(Color::Black);
+				Continie.setColor(Color(13,213,203));
 			}
 			else
 			{
@@ -107,7 +107,7 @@
 			//std::cout << "hdghd" << std::endl;
 			if (back.Mous_in_text(a))
 			{
-				back.setColor(Color::Black);
+				back.setColor(Color(13,213,203));
 			}
 			else
 			{
@@ -122,7 +122,7 @@
 			
 			if (PlayFromGranny.Mous_in_text(a))
 			{
-				PlayFromGranny.setColor(Color::Black);
+				PlayFromGranny.setColor(Color(13,213,203));
 			}
 			else
 			{
@@ -137,7 +137,7 @@
 
 			if (Clasical.Mous_in_text(a))
 			{
-				Clasical.setColor(Color::Black);
+				Clasical.setColor(Color(13,213,203));
 			}
 			else
 			{
@@ -154,7 +154,7 @@
 		{
 			if (back.Mous_in_text(a))
 			{
-				back.setColor(Color::Black);
+				back.setColor(Color(13,213,203));
 			}
 			else
 			{
@@ -168,7 +168,7 @@
 
 			if (easy.Mous_in_text(a))
 			{
-				easy.setColor(Color::Black);
+				easy.setColor(Color(13,213,203));
 			}
 			else
 			{
@@ -185,7 +185,7 @@
 			}
 			if (hard.Mous_in_text(a))
 			{
-				hard.setColor(Color::Black);
+				hard.setColor(Color(13,213,203));
 
 			}
 			else
@@ -199,13 +199,13 @@
 					buttons = PlayFromPlay;
 					GameFromPlayer.set(2, "Image/tommy.png", player, font);
 				}
-				hard.setColor(Color::Black);
+				hard.setColor(Color(13,213,203));
 
 			}
 
 			if (extream.Mous_in_text(a))
 			{
-				extream.setColor(Color::Black);
+				extream.setColor(Color(13,213,203));
 			}
 			else
 			{
@@ -219,11 +219,11 @@
 					buttons = PlayFromPlay;
 					GameFromPlayer.set(3, "Image/tommy.png", player, font);
 				}
-				extream.setColor(Color::Black);
+				extream.setColor(Color(13,213,203));
 			}
 			if (medium.Mous_in_text(a))
 			{
-				medium.setColor(Color::Black);
+				medium.setColor(Color(13,213,203));
 			}
 			else
 			{
@@ -234,10 +234,10 @@
 				if (fromPlayer)
 				{
 					buttons = PlayFromPlay;
-					GameFromPlayer.set(3, "Image/tommy.png", player, font);
+					GameFromPlayer.set(1, "Image/tommy.png", player, font);
 				}
 				
-				medium.setColor(Color::Black);
+				medium.setColor(Color(13,213,203));
 			}
 		}
 

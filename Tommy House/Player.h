@@ -29,7 +29,8 @@ class Player
 	Keyboard::Key down = Keyboard::Down;
 	Keyboard::Key left = Keyboard::Left;
 	Keyboard::Key right = Keyboard::Right;
-	Keyboard::Key Die = Keyboard::Space;
+	Keyboard::Key Use = Keyboard::Space;
+	Keyboard::Key Equip = Keyboard::E;
 public:
 	bool getFakor()
 	{

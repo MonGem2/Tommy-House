@@ -7,8 +7,16 @@ using namespace sf;
 
 class Management : public MainClassMenu
 {
-	myText Up, Down, Left, Right, Die, back;
-	Image menu; Texture Menu_t; Sprite menu_s;
+	myText Up;
+	myText Down;
+	myText Left;
+	myText Right;
+	myText Equip;
+	myText back;
+	myText Use;
+	Image menu; 
+	Texture Menu_t;
+	Sprite menu_s;
 public:
 	Management();
 	Management(String file_font, String file_image);

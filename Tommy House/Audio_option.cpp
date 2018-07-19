@@ -71,7 +71,7 @@ void Audio_option::update(Music &music, int &button, RenderWindow &a)
 	{
 		if (on_music.Mous_in_text(a))
 		{
-			on_music.setColor(Color::Black);
+			on_music.setColor(Color(13,213,203));
 		}
 		else
 		{
@@ -92,7 +92,7 @@ void Audio_option::update(Music &music, int &button, RenderWindow &a)
 		}
 		if (of_music.Mous_in_text(a))
 		{
-			of_music.setColor(Color::Black);
+			of_music.setColor(Color(13,213,203));
 		}
 		else
 		{
@@ -115,7 +115,7 @@ void Audio_option::update(Music &music, int &button, RenderWindow &a)
 
 		if (on.Mous_in_text(a))
 		{
-			on.setColor(Color::Black);
+			on.setColor(Color(13,213,203));
 		}
 		else
 		{
@@ -135,7 +135,7 @@ void Audio_option::update(Music &music, int &button, RenderWindow &a)
 
 		if (of.Mous_in_text(a))
 		{
-			of.setColor(Color::Black);
+			of.setColor(Color(13,213,203));
 		}
 		else
 		{
@@ -156,7 +156,7 @@ void Audio_option::update(Music &music, int &button, RenderWindow &a)
 
 		if (back.Mous_in_text(a))
 		{
-			back.setColor(Color::Black);
+			back.setColor(Color(13,213,203));
 		}
 		else
 		{
